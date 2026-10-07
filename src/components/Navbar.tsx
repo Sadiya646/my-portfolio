@@ -22,7 +22,7 @@ export default function Navbar() {
           href="#home"
           className="text-2xl font-bold tracking-tight text-white"
         >
-          Ruwa<span className="text-[#ccff00]">.</span>
+          Sadiya<span className="text-[#ccff00]">.</span>
         </a>
 
         {/* Desktop Navigation */}
