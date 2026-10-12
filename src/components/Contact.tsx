@@ -28,7 +28,7 @@ export default function Contact() {
 
           <div className="mt-10 flex justify-center gap-6">
             <a
-              href="https://github.com/"
+              href="https://github.com/Sadiya646"
               target="_blank"
               className="text-gray-500 transition hover:text-[#ccff00]"
             >
@@ -36,7 +36,7 @@ export default function Contact() {
             </a>
 
             <a
-              href="https://linkedin.com/"
+              href="https://www.linkedin.com/in/sadiya-tasnim/"
               target="_blank"
               className="text-gray-500 transition hover:text-[#ccff00]"
             >

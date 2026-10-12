@@ -23,6 +23,6 @@ export const projects = [
       "A study-focused web platform designed to help students manage routines, tasks, exam preparation and learning activities.",
     technologies: ["Next.js", "TypeScript", "Tailwind CSS"],
     github: "https://github.com/",
-    live: "https://example.com/",
+    live: "https://bazardor-blush.vercel.app/",
   },
 ];
