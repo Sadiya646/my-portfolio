@@ -18,11 +18,11 @@ export const projects = [
   },
 
   {
-    title: "Student Study Platform",
+    title: "Bazardor",
     description:
       "A study-focused web platform designed to help students manage routines, tasks, exam preparation and learning activities.",
     technologies: ["Next.js", "TypeScript", "Tailwind CSS"],
-    github: "https://github.com/",
+    github: "https://github.com/Sadiya646/bazardor",
     live: "https://bazardor-blush.vercel.app/",
   },
 ];
