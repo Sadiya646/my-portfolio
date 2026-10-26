@@ -1,28 +1,28 @@
 export const projects = [
   {
+    slug: "fitlog",
     title: "FitLog",
-    description:
-      "A modern workout and fitness planning application where users can explore workouts and create their personal workout plan.",
-    technologies: ["Next.js", "TypeScript", "Tailwind CSS"],
-    github: "https://github.com/",
-    live: "https://example.com/",
+    description: "A modern fitness tracking web application...",
+    image: "/images/fitlog.png",
+    tech: ["Next.js", "TypeScript", "Tailwind CSS"],
   },
 
-  {
-    title: "Authentication App",
-    description:
-      "A modern authentication system with email signup, login, session management and protected routes.",
-    technologies: ["Next.js", "TypeScript", "Better Auth"],
-    github: "https://github.com/",
-    live: "https://example.com/",
-  },
+{
+  slug: "bazardor",
+  title: "BazarDor",
+  description:
+    "A responsive web app for exploring, tracking, and comparing essential product prices across different markets in Bangladesh.",
+  image: "/images/bazardor.png",
+  tech: ["Next.js", "React", "TypeScript", "Tailwind CSS", "MongoDB"],
+  live: "https://bazardor-blush.vercel.app/",
+  github: "YOUR_GITHUB_LINK",
+},
 
   {
-    title: "Bazardor",
-    description:
-      "A study-focused web platform designed to help students manage routines, tasks, exam preparation and learning activities.",
-    technologies: ["Next.js", "TypeScript", "Tailwind CSS"],
-    github: "https://github.com/Sadiya646/bazardor",
-    live: "https://bazardor-blush.vercel.app/",
+    slug: "health-reminder",
+    title: "Offline First Health Reminder",
+    description: "A mobile-first reminder application...",
+    image: "/images/health-reminder.png",
+    tech: ["Flutter", "Dart", "SQLite"],
   },
 ];

@@ -1,5 +1,221 @@
+
+import Image from "next/image";
+import { profile } from "@/data/portfolio";
+
+const socials = [
+  {
+    href: profile.github,
+    label: "GitHub",
+    path: "M12 2C6.48 2 2 6.58 2 12.26c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.49v-1.72c-2.78.62-3.37-1.22-3.37-1.22-.46-1.2-1.11-1.52-1.11-1.52-.91-.64.07-.63.07-.63 1 .07 1.53 1.06 1.53 1.06.9 1.58 2.36 1.12 2.94.86.09-.67.35-1.12.64-1.38-2.22-.26-4.56-1.15-4.56-5.07 0-1.12.39-2.03 1.02-2.75-.1-.26-.44-1.3.1-2.71 0 0 .84-.28 2.75 1.05A9.18 9.18 0 0 1 12 7.02c.85 0 1.71.12 2.51.35 1.91-1.33 2.75-1.05 2.75-1.05.54 1.41.2 2.45.1 2.71.63.72 1.02 1.63 1.02 2.75 0 3.93-2.34 4.81-4.57 5.06.36.32.68.94.68 1.9v2.82c0 .27.18.6.69.49A10.27 10.27 0 0 0 22 12.26C22 6.58 17.52 2 12 2Z",
+  },
+  {
+    href: profile.linkedin,
+    label: "LinkedIn",
+    path: "M6.94 8.5H3.27V20h3.67V8.5ZM5.1 3C3.94 3 3 3.94 3 5.1s.94 2.1 2.1 2.1 2.1-.94 2.1-2.1S6.26 3 5.1 3ZM20.73 13.42c0-3.46-1.84-5.07-4.29-5.07-1.98 0-2.87 1.09-3.37 1.86V8.5H9.4V20h3.67v-5.7c0-1.5.28-2.96 2.15-2.96 1.84 0 1.86 1.73 1.86 3.06V20h3.65v-6.58Z",
+  },
+  {
+    href: `mailto:${profile.email}`,
+    label: "Email",
+    path: "M3 5h18v14H3V5Zm0 0 9 7 9-7",
+  },
+];
+
 export default function Hero() {
   return (
-    <section id="home" className="relative flex min-h-screen items-center overflow-hidden bg-[#090a0d]" > {/* Background Glow */} <div className="absolute left-1/2 top-1/3 h-96 w-96 -translate-x-1/2 rounded-full bg-[#ccff00]/10 blur-[120px]" /> <div className="relative mx-auto grid w-full max-w-7xl gap-16 px-6 py-32 lg:grid-cols-2 lg:px-8"> {/* ================= LEFT ================= */} <div className="flex flex-col justify-center"> <p className="mb-5 text-sm font-medium uppercase tracking-[0.3em] text-[#ccff00]"> Frontend Developer </p> <h1 className="text-5xl font-bold leading-tight tracking-tight text-white sm:text-6xl lg:text-7xl"> Hi, I'm{" "} <span className="text-[#ccff00]">Sadiya</span> <span className="text-white">.</span> </h1> <p className="mt-6 max-w-xl text-lg leading-8 text-gray-400"> I build modern, responsive and user-friendly web applications using React, Next.js, TypeScript and modern frontend technologies. </p> {/* Buttons */} <div className="mt-9 flex flex-wrap gap-4"> <a href="#projects" className="rounded-full bg-[#ccff00] px-7 py-3 font-semibold text-black transition duration-300 hover:scale-105 hover:bg-[#d9ff4d]" > View Projects </a> <a href="#contact" className="rounded-full border border-white/20 px-7 py-3 font-semibold text-white transition duration-300 hover:border-[#ccff00] hover:text-[#ccff00]" > Contact Me </a> </div> {/* Social Links */} <div className="mt-10 flex gap-6"> <a href="https://github.com/Sadiya646" target="_blank" rel="noopener noreferrer" className="text-sm text-gray-500 transition hover:text-[#ccff00]" > GitHub ↗ </a> <a href="https://www.linkedin.com/in/sadiya-tasnim/" target="_blank" rel="noopener noreferrer" className="text-sm text-gray-500 transition hover:text-[#ccff00]" > LinkedIn ↗ </a> </div> </div> {/* ================= RIGHT ================= */} <div className="flex items-center justify-center"> <div className="relative h-72 w-72 sm:h-96 sm:w-96"> {/* Outer Rotating Ring */} <div className="absolute inset-0 animate-[spin_20s_linear_infinite] rounded-full border border-[#ccff00]/30" /> {/* Inner Rotating Ring */} <div className="absolute inset-5 animate-[spin_15s_linear_infinite_reverse] rounded-full border border-dashed border-white/15" /> {/* Glow */} <div className="absolute inset-20 animate-pulse rounded-full bg-[#ccff00]/10 blur-3xl" /> {/* Center */} <div className="absolute inset-12 flex items-center justify-center rounded-full border border-white/10 bg-white/[0.03] backdrop-blur-xl"> <div className="text-center"> <p className="animate-pulse text-6xl font-bold text-[#ccff00]"> S </p> <p className="mt-2 text-xs uppercase tracking-[0.3em] text-gray-500"> Developer </p> </div> </div> {/* Green Orbiting Dot */} <div className="absolute inset-0 animate-[spin_8s_linear_infinite]"> <div className="absolute right-4 top-1/2 h-3 w-3 rounded-full bg-[#ccff00] shadow-[0_0_20px_#ccff00]" /> </div> {/* White Orbiting Dot */} <div className="absolute inset-0 animate-[spin_12s_linear_infinite_reverse]"> <div className="absolute bottom-8 left-1/2 h-2 w-2 rounded-full bg-white shadow-[0_0_15px_white]" /> </div> </div> </div> </div> </section>
+    <section
+      id="home"
+      className="relative min-h-screen overflow-hidden bg-[#021024] pt-28 md:pt-32"
+    >
+      {/* ================= BACKGROUND ================= */}
+      <div className="pointer-events-none absolute inset-0 overflow-hidden">
+        {/* top right glow */}
+        <div className="absolute -right-32 -top-32 h-96 w-96 rounded-full bg-navy-400/20 blur-[110px]" />
+
+        {/* center glow */}
+        <div className="absolute left-[35%] top-[35%] h-80 w-80 rounded-full bg-navy-800/50 blur-[120px]" />
+
+        {/* bottom left glow */}
+        <div className="absolute -bottom-40 -left-32 h-96 w-96 rounded-full bg-navy-400/15 blur-[120px]" />
+
+        {/* subtle grid */}
+        <div
+          className="absolute inset-0 opacity-[0.035]"
+          style={{
+            backgroundImage:
+              "linear-gradient(#C1E8FF 1px, transparent 1px), linear-gradient(90deg, #C1E8FF 1px, transparent 1px)",
+            backgroundSize: "60px 60px",
+          }}
+        />
+      </div>
+
+      {/* ================= CONTENT ================= */}
+      <div className="relative mx-auto grid min-h-[calc(100vh-7rem)] max-w-7xl items-center gap-16 px-6 pb-20 lg:grid-cols-[1.05fr_0.95fr] lg:px-10">
+        {/* ================= LEFT ================= */}
+        <div className="z-10 max-w-2xl animate-fade-up">
+          {/* designation */}
+          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-navy-400/50 bg-navy-800/50 px-4 py-2 backdrop-blur-md">
+            <span className="h-2 w-2 animate-pulse rounded-full bg-navy-100 shadow-[0_0_12px_#C1E8FF]" />
+
+            <span className="text-[10px] font-semibold uppercase tracking-[0.18em] text-navy-100 md:text-xs">
+              {profile.designation}
+            </span>
+          </div>
+
+          {/* heading */}
+          <h1 className="text-4xl font-extrabold leading-[1.08] tracking-tight text-white sm:text-3xl md:text-4xl lg:text-[3.2rem]">
+            Building modern web
+            <br />
+            experiences from
+            <br />
+            <span
+              className="bg-linear-to-r from-[#C1E8FF] via-[#7DA0CA] to-[#5483B3] bg-clip-text text-transparent"
+              style={{
+                textShadow: "0 0 35px rgba(193,232,255,0.15)",
+              }}
+            >
+              frontend to backend.
+            </span>
+          </h1>
+
+          {/* intro */}
+          <p className="mt-7 max-w-xl text-sm leading-7 text-[#7DA0CA] md:text-base">
+            {profile.intro}
+          </p>
+
+          {/* buttons */}
+          <div className="mt-9 flex flex-wrap gap-3">
+            <a
+              href="#projects"
+              className="group inline-flex items-center gap-2 rounded-full bg-navy-100 px-6 py-3 text-sm font-semibold text-navy-950 shadow-[0_0_25px_rgba(193,232,255,0.2)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_35px_rgba(193,232,255,0.35)]"
+            >
+              View Projects
+              <span className="transition-transform duration-300 group-hover:translate-x-1">
+                →
+              </span>
+            </a>
+
+            <a
+              href="/resume.pdf"
+              download="Ruwa-Resume.pdf"
+              className="group inline-flex items-center gap-2 rounded-full border border-navy-400/70 bg-navy-800/30 px-6 py-3 text-sm font-medium text-navy-100 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-navy-100 hover:bg-navy-800/60"
+            >
+              Download Resume
+              <span className="transition-transform duration-300 group-hover:translate-y-1">
+                ↓
+              </span>
+            </a>
+          </div>
+
+          {/* social links */}
+          <div className="mt-8 flex items-center gap-3">
+            {socials.map((social) => (
+              <a
+                key={social.label}
+                href={social.href}
+                target={social.label !== "Email" ? "_blank" : undefined}
+                rel={
+                  social.label !== "Email"
+                    ? "noopener noreferrer"
+                    : undefined
+                }
+                aria-label={social.label}
+                className="group flex h-11 w-11 items-center justify-center rounded-full border border-[#5483B3]/50 bg-navy-800/40 text-[#7DA0CA] backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:border-[#C1E8FF] hover:bg-[#5483B3]/30 hover:text-[#C1E8FF]"
+              >
+                <svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.7"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d={social.path} />
+                </svg>
+              </a>
+            ))}
+          </div>
+        </div>
+
+        {/* ================= RIGHT ================= */}
+        <div className="relative mx-auto flex w-full max-w-[470px] items-center justify-center">
+          {/* large ambient glow */}
+          <div className="absolute h-[360px] w-[360px] rounded-full bg-[#5483B3]/20 blur-[100px] md:h-[430px] md:w-[430px]" />
+
+          {/* decorative rotating glow */}
+          <div className="absolute h-[360px] w-[360px] animate-[spin_18s_linear_infinite] rounded-[5rem] bg-[conic-gradient(from_0deg,transparent,#5483B3,transparent,#C1E8FF,transparent)] opacity-30 blur-2xl md:h-[420px] md:w-[420px]" />
+
+          {/* back card 1 */}
+          <div className="absolute h-[360px] w-[300px] translate-x-7 -translate-y-7 rotate-6 rounded-[3rem] border border-[#5483B3]/30 bg-[#052659]/70 shadow-2xl backdrop-blur-md md:h-[410px] md:w-[350px]" />
+
+          {/* back card 2 */}
+          <div className="absolute h-[360px] w-[300px] -translate-x-5 -translate-y-4 -rotate-6 rounded-[3rem] border border-[#7DA0CA]/20 bg-[#5483B3]/30 shadow-2xl backdrop-blur-md md:h-[410px] md:w-[350px]" />
+
+          {/* main profile card */}
+          <div className="relative h-[360px] w-[300px] overflow-hidden rounded-[3rem] border border-[#7DA0CA]/40 bg-[#052659] shadow-[0_25px_80px_rgba(2,16,36,0.8)] md:h-[410px] md:w-[350px]">
+            <Image
+              src="/images/profileimage.png"
+              alt={`Portrait of ${profile.name}`}
+              fill
+              priority
+              sizes="(min-width: 768px) 350px, 300px"
+              className="object-cover"
+            />
+
+            {/* photo overlay */}
+            <div className="absolute inset-0 bg-gradient-to-t from-[#021024]/50 via-transparent to-[#5483B3]/10" />
+          </div>
+
+          {/* code chip */}
+          <div className="absolute -right-2 top-12 flex h-12 w-12 items-center justify-center rounded-xl border border-[#7DA0CA]/40 bg-[#052659]/90 font-mono text-sm text-[#C1E8FF] shadow-[0_10px_30px_rgba(2,16,36,0.6)] backdrop-blur-md md:-right-4">
+            &lt;/&gt;
+          </div>
+
+          {/* decorative dots left */}
+          <div className="absolute -left-5 top-20 grid grid-cols-4 gap-2 opacity-80 md:-left-10">
+            {Array.from({ length: 16 }).map((_, i) => (
+              <span
+                key={i}
+                className="h-1.5 w-1.5 rounded-full bg-[#7DA0CA]"
+                style={{
+                  opacity: 0.25 + (i % 4) * 0.15,
+                }}
+              />
+            ))}
+          </div>
+
+          {/* decorative dots right bottom */}
+          <div className="absolute -bottom-5 -right-2 grid grid-cols-4 gap-2 md:-right-8">
+            {Array.from({ length: 16 }).map((_, i) => (
+              <span
+                key={i}
+                className="h-1.5 w-1.5 rounded-full bg-[#5483B3]"
+                style={{
+                  opacity: 0.25 + (i % 4) * 0.15,
+                }}
+              />
+            ))}
+          </div>
+
+          {/* handwritten text */}
+          <div className="absolute -right-14 bottom-12 rotate-[-10deg] text-right text-[#7DA0CA] md:-right-20">
+            <p className="font-(family-name:--font-caveat) text-xl leading-6">
+              Better
+              <br />
+              Code
+              <br />
+              Brighter
+              <br />
+              Future
+            </p>
+            <span className="ml-5 text-2xl">⌁</span>
+          </div>
+        </div>
+      </div>
+
+      {/* bottom fade */}
+      <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#021024] to-transparent" />
+    </section>
   );
 }

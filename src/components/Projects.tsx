@@ -1,82 +1,68 @@
-import { projects } from "@/data/projects";
+import Image from "next/image";
+import Link from "next/link";
+import SectionHeading from "./SectionHeading";
+import { projects } from "@/data/portfolio";
 
 export default function Projects() {
   return (
-    <section id="projects" className="bg-[#0d0f12] px-6 py-24 lg:px-8">
-      <div className="mx-auto max-w-7xl">
-        
-        <div className="mb-14 flex flex-col justify-between gap-5 md:flex-row md:items-end">
-          <div>
-            <p className="mb-3 text-sm uppercase tracking-[0.3em] text-[#ccff00]">
-              My Work
-            </p>
-
-            <h2 className="text-4xl font-bold text-white md:text-5xl">
-              Featured Projects.
-            </h2>
-          </div>
-
-          <p className="max-w-md text-gray-500">
-            A selection of projects I've built while learning and exploring
-            modern web technologies.
-          </p>
+    <section id="projects" className="section-band">
+      <div className="mx-auto max-w-6xl px-5 py-20 md:py-24">
+        <div className="grid gap-10 lg:grid-cols-[1fr_auto] lg:items-end">
+          <SectionHeading index="05" kicker="Projects" title="My Projects" />
+          <a
+            href="#projects"
+            className="mb-10 inline-flex items-center gap-2 text-sm font-medium text-navy-100 transition-colors hover:text-white lg:mb-12"
+          >
+            View All Projects{" "}
+            <span className="transition-transform group-hover:translate-x-1">
+              →
+            </span>
+          </a>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {projects.map((project, index) => (
-            <div
-              key={project.title}
-              className="group overflow-hidden rounded-3xl border border-white/10 bg-white/3 transition duration-500 hover:-translate-y-2 hover:border-[#ccff00]/40"
+        <div className="stagger grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {projects.map((project) => (
+            <Link
+              key={project.slug}
+              href={`/projects/${project.slug}`}
+              className="card-shell group flex flex-col overflow-hidden"
             >
-              {/* Project Preview */}
-              <div className="relative flex h-52 items-center justify-center overflow-hidden bg-[#090a0d]">
-                <div className="absolute h-40 w-40 rounded-full bg-[#ccff00]/10 blur-3xl transition group-hover:bg-[#ccff00]/20" />
-
-                <span className="relative text-6xl font-bold text-white/10 transition duration-500 group-hover:text-[#ccff00]/20">
-                  0{index + 1}
-                </span>
+              <div className="relative aspect-[16/10] w-full overflow-hidden bg-navy-800/40">
+                <Image
+                  src={project.image}
+                  alt={`Preview of ${project.title}`}
+                  fill
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                />
               </div>
 
-              {/* Content */}
-              <div className="p-7">
-                <h3 className="text-2xl font-bold text-white">
+              <div className="flex flex-1 flex-col p-5">
+                <h3 className="text-lg font-semibold text-white">
                   {project.title}
                 </h3>
-
-                <p className="mt-4 leading-7 text-gray-500">
+                <p className="mt-2 flex-1 text-sm leading-relaxed text-navy-300">
                   {project.description}
                 </p>
 
-                <div className="mt-5 flex flex-wrap gap-2">
-                  {project.technologies.map((technology) => (
+                <div className="mt-4 flex flex-wrap gap-2">
+                  {project.tech.map((t) => (
                     <span
-                      key={technology}
-                      className="rounded-full bg-white/5 px-3 py-1 text-xs text-gray-400"
+                      key={t}
+                      className="rounded-full border border-navy-300/25 bg-navy-800/40 px-3 py-1 text-xs text-navy-100"
                     >
-                      {technology}
+                      {t}
                     </span>
                   ))}
                 </div>
 
-                <div className="mt-7 flex gap-5">
-                  <a
-                    href={project.live}
-                    target="_blank"
-                    className="text-sm font-medium text-[#ccff00] hover:underline"
-                  >
-                    Live Demo ↗
-                  </a>
-
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    className="text-sm font-medium text-gray-400 hover:text-white"
-                  >
-                    GitHub ↗
-                  </a>
-                </div>
+                <span className="mt-5 inline-flex items-center gap-2 self-start rounded-full border border-navy-300/30 px-4 py-2 text-sm font-medium text-navy-100 transition-colors group-hover:border-navy-100/60 group-hover:bg-navy-400/20">
+                  View Details
+                  <span className="transition-transform group-hover:translate-x-1">
+                    →
+                  </span>
+                </span>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>

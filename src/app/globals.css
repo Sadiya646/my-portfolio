@@ -1,83 +1,210 @@
 @import "tailwindcss";
 
+@theme {
+  --color-navy-950: #021024;
+  --color-navy-800: #052659;
+  --color-navy-400: #5483b3;
+  --color-navy-300: #7da0ca;
+  --color-navy-100: #c1e8ff;
+  --font-handwriting: var(--font-caveat);
+}
+
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  margin: 0;
-  background: #090a0d;
-  color: white;
+  background: #021024;
+  color: #c1e8ff;
+  overflow-x: hidden;
 }
 
 ::selection {
-  background: #ccff00;
-  color: black;
+  background: #7da0ca;
+  color: #021024;
 }
 
 ::-webkit-scrollbar {
   width: 8px;
 }
-
 ::-webkit-scrollbar-track {
-  background: #090a0d;
+  background: #021024;
 }
-
 ::-webkit-scrollbar-thumb {
-  background: #2a2d32;
+  background: #052659;
   border-radius: 999px;
 }
-
 ::-webkit-scrollbar-thumb:hover {
-  background: #ccff00;
+  background: #5483b3;
 }
 
-@keyframes rotateCircle {
+/* ---------- animations ---------- */
+
+@keyframes fade-up {
   from {
-    transform: rotate(0deg);
+    opacity: 0;
+    transform: translateY(24px);
   }
-
   to {
-    transform: rotate(360deg);
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-@keyframes rotateReverse {
-  from {
-    transform: rotate(360deg);
+@keyframes float-y {
+  0%,
+  100% {
+    transform: translateY(0);
   }
-
-  to {
-    transform: rotate(0deg);
+  50% {
+    transform: translateY(-10px);
   }
 }
 
-@keyframes pulseGlow {
+@keyframes pulse-glow {
   0%,
   100% {
     transform: scale(1);
-    opacity: 0.3;
+    opacity: 0.5;
   }
-
   50% {
-    transform: scale(1.15);
-    opacity: 0.6;
+    transform: scale(1.08);
+    opacity: 0.8;
   }
 }
 
-.circle-rotate {
-  animation: rotateCircle 20s linear infinite;
+@keyframes blink-dot {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.35;
+  }
 }
 
-.circle-rotate-reverse {
-  animation: rotateReverse 15s linear infinite;
+@keyframes blob-drift {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(-18px, 14px) scale(1.08);
+  }
+  66% {
+    transform: translate(14px, -10px) scale(0.95);
+  }
 }
 
-.circle-glow {
-  animation: pulseGlow 3s ease-in-out infinite;
+@keyframes ring-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
-::selection {
-  background: #ccff00;
-  color: black;
+@keyframes dot-shimmer {
+  0%,
+  100% {
+    opacity: 0.25;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.25);
+  }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.8s ease-out both;
+}
+.animate-float {
+  animation: float-y 6s ease-in-out infinite;
+}
+.animate-pop {
+  animation: fade-up 0.35s ease-out both;
+}
+.animate-glow {
+  animation: pulse-glow 5s ease-in-out infinite;
+}
+.animate-blink {
+  animation: blink-dot 2s ease-in-out infinite;
+}
+.animate-drift {
+  animation: blob-drift 9s ease-in-out infinite;
+}
+.animate-drift-slow {
+  animation: blob-drift 14s ease-in-out infinite reverse;
+}
+.animate-ring {
+  animation: ring-spin 16s linear infinite;
+}
+.animate-shimmer {
+  animation: dot-shimmer 3s ease-in-out infinite;
+}
+
+/* staggered entrance */
+.stagger > * {
+  animation: fade-up 0.8s ease-out both;
+}
+.stagger > *:nth-child(1) {
+  animation-delay: 0.05s;
+}
+.stagger > *:nth-child(2) {
+  animation-delay: 0.15s;
+}
+.stagger > *:nth-child(3) {
+  animation-delay: 0.25s;
+}
+.stagger > *:nth-child(4) {
+  animation-delay: 0.35s;
+}
+.stagger > *:nth-child(5) {
+  animation-delay: 0.45s;
+}
+.stagger > *:nth-child(6) {
+  animation-delay: 0.55s;
+}
+
+.card-shell {
+  background: linear-gradient(
+    145deg,
+    rgba(84, 131, 179, 0.09),
+    rgba(5, 38, 89, 0.35)
+  );
+  border: 1px solid rgba(125, 160, 202, 0.25);
+  border-radius: 1rem;
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+.card-shell:hover {
+  transform: translateY(-4px);
+  border-color: rgba(193, 232, 255, 0.55);
+  box-shadow: 0 12px 40px -12px rgba(84, 131, 179, 0.45);
+}
+
+.section-band {
+  border-top: 1px solid rgba(125, 160, 202, 0.15);
+  background:
+    radial-gradient(
+      900px circle at 85% 0%,
+      rgba(5, 38, 89, 0.55),
+      transparent 55%
+    ),
+    radial-gradient(
+      700px circle at 0% 100%,
+      rgba(5, 38, 89, 0.4),
+      transparent 50%
+    );
+}
+
+.text-glow-gradient {
+  background: linear-gradient(90deg, #c1e8ff, #7da0ca);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
