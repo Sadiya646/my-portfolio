@@ -138,80 +138,109 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* ================= RIGHT ================= */}
-        <div className="relative mx-auto flex w-full max-w-[470px] items-center justify-center">
-          {/* large ambient glow */}
-          <div className="absolute h-[360px] w-[360px] rounded-full bg-[#5483B3]/20 blur-[100px] md:h-[430px] md:w-[430px]" />
+        
+{/* ================= RIGHT ================= */}
 
-          {/* decorative rotating glow */}
-          <div className="absolute h-[360px] w-[360px] animate-[spin_18s_linear_infinite] rounded-[5rem] bg-[conic-gradient(from_0deg,transparent,#5483B3,transparent,#C1E8FF,transparent)] opacity-30 blur-2xl md:h-[420px] md:w-[420px]" />
+<div className="relative mx-auto flex w-full max-w-[400px] items-center justify-center">
 
-          {/* back card 1 */}
-          <div className="absolute h-[360px] w-[300px] translate-x-7 -translate-y-7 rotate-6 rounded-[3rem] border border-[#5483B3]/30 bg-[#052659]/70 shadow-2xl backdrop-blur-md md:h-[410px] md:w-[350px]" />
+  {/* Animated background glow */}
+  <div
+    aria-hidden
+    className="animate-glow absolute h-[300px] w-[300px] rounded-full bg-[#5483B3]/20 blur-[90px] md:h-[340px] md:w-[340px]"
+  />
 
-          {/* back card 2 */}
-          <div className="absolute h-[360px] w-[300px] -translate-x-5 -translate-y-4 -rotate-6 rounded-[3rem] border border-[#7DA0CA]/20 bg-[#5483B3]/30 shadow-2xl backdrop-blur-md md:h-[410px] md:w-[350px]" />
+  {/* Moving light behind image */}
+  <div
+    aria-hidden
+    className="absolute h-[270px] w-[270px] animate-[spin_12s_linear_infinite] rounded-full bg-[conic-gradient(from_0deg,transparent,#5483B3,transparent,#C1E8FF,transparent)] opacity-40 blur-2xl md:h-[310px] md:w-[310px]"
+  />
 
-          {/* main profile card */}
-          <div className="relative h-[360px] w-[300px] overflow-hidden rounded-[3rem] border border-[#7DA0CA]/40 bg-[#052659] shadow-[0_25px_80px_rgba(2,16,36,0.8)] md:h-[410px] md:w-[350px]">
-            <Image
-              src="/images/profileimage.png"
-              alt={`Portrait of ${profile.name}`}
-              fill
-              priority
-              sizes="(min-width: 768px) 350px, 300px"
-              className="object-cover"
-            />
+  {/* Soft inner glow */}
+  <div
+    aria-hidden
+    className="absolute h-[230px] w-[230px] rounded-full bg-[#7DA0CA]/10 blur-3xl md:h-[270px] md:w-[270px]"
+  />
 
-            {/* photo overlay */}
-            <div className="absolute inset-0 bg-gradient-to-t from-[#021024]/50 via-transparent to-[#5483B3]/10" />
-          </div>
+  {/* Main image */}
+  <div className="relative h-[260px] w-[220px] overflow-hidden rounded-[2.5rem] border border-[#7DA0CA]/40 bg-[#052659] shadow-[0_25px_70px_rgba(2,16,36,0.8)] transition-transform duration-500 hover:-translate-y-2 md:h-[310px] md:w-[260px]">
 
-          {/* code chip */}
-          <div className="absolute -right-2 top-12 flex h-12 w-12 items-center justify-center rounded-xl border border-[#7DA0CA]/40 bg-[#052659]/90 font-mono text-sm text-[#C1E8FF] shadow-[0_10px_30px_rgba(2,16,36,0.6)] backdrop-blur-md md:-right-4">
-            &lt;/&gt;
-          </div>
+    <Image
+      src="/images/profileimage.png"
+      alt={`Portrait of ${profile.name}`}
+      fill
+      priority
+      sizes="(min-width: 768px) 260px, 220px"
+      className="object-cover"
+    />
 
-          {/* decorative dots left */}
-          <div className="absolute -left-5 top-20 grid grid-cols-4 gap-2 opacity-80 md:-left-10">
-            {Array.from({ length: 16 }).map((_, i) => (
-              <span
-                key={i}
-                className="h-1.5 w-1.5 rounded-full bg-[#7DA0CA]"
-                style={{
-                  opacity: 0.25 + (i % 4) * 0.15,
-                }}
-              />
-            ))}
-          </div>
+    {/* Image overlay */}
+    <div
+      aria-hidden
+      className="absolute inset-0 bg-gradient-to-t from-[#021024]/45 via-transparent to-[#5483B3]/15"
+    />
 
-          {/* decorative dots right bottom */}
-          <div className="absolute -bottom-5 -right-2 grid grid-cols-4 gap-2 md:-right-8">
-            {Array.from({ length: 16 }).map((_, i) => (
-              <span
-                key={i}
-                className="h-1.5 w-1.5 rounded-full bg-[#5483B3]"
-                style={{
-                  opacity: 0.25 + (i % 4) * 0.15,
-                }}
-              />
-            ))}
-          </div>
+    {/* Image shine */}
+    <div
+      aria-hidden
+      className="absolute -left-1/2 top-0 h-full w-1/3 rotate-12 bg-white/10 blur-xl transition-all duration-1000 group-hover:left-full"
+    />
+  </div>
 
-          {/* handwritten text */}
-          <div className="absolute -right-14 bottom-12 rotate-[-10deg] text-right text-[#7DA0CA] md:-right-20">
-            <p className="font-(family-name:--font-caveat) text-xl leading-6">
-              Better
-              <br />
-              Code
-              <br />
-              Brighter
-              <br />
-              Future
-            </p>
-            <span className="ml-5 text-2xl">⌁</span>
-          </div>
-        </div>
+  {/* Floating code chip */}
+  <div className="animate-float absolute -right-1 top-8 flex h-11 w-11 items-center justify-center rounded-xl border border-[#7DA0CA]/40 bg-[#052659]/90 font-mono text-sm text-[#C1E8FF] shadow-[0_10px_30px_rgba(2,16,36,0.6)] backdrop-blur-md md:-right-3">
+    &lt;/&gt;
+  </div>
+
+  {/* Small floating accent */}
+  <div
+    aria-hidden
+    className="animate-float absolute -left-3 bottom-16 h-3 w-3 rounded-full bg-[#C1E8FF] shadow-[0_0_20px_#C1E8FF] md:-left-6"
+    style={{ animationDelay: "1s" }}
+  />
+
+  {/* Decorative dots */}
+  <div className="absolute -left-4 top-16 grid grid-cols-4 gap-2 opacity-60 md:-left-8">
+    {Array.from({ length: 12 }).map((_, i) => (
+      <span
+        key={i}
+        className="animate-shimmer h-1.5 w-1.5 rounded-full bg-[#7DA0CA]"
+        style={{
+          animationDelay: `${i * 0.2}s`,
+        }}
+      />
+    ))}
+  </div>
+
+  {/* Bottom decorative dots */}
+  <div className="absolute -bottom-4 -right-2 grid grid-cols-4 gap-2 opacity-50 md:-right-7">
+    {Array.from({ length: 12 }).map((_, i) => (
+      <span
+        key={i}
+        className="animate-shimmer h-1.5 w-1.5 rounded-full bg-[#5483B3]"
+        style={{
+          animationDelay: `${i * 0.25}s`,
+        }}
+      />
+    ))}
+  </div>
+
+  {/* Handwritten text */}
+  <div className="absolute -right-8 bottom-4 rotate-[-10deg] text-right text-[#7DA0CA] md:-right-16 md:bottom-6">
+    <p className="font-(family-name:--font-caveat) text-lg leading-5 md:text-xl md:leading-6">
+      Better
+      <br />
+      Code
+      <br />
+      Brighter
+      <br />
+      Future
+    </p>
+
+    <span className="ml-4 text-xl">⌁</span>
+  </div>
+
+</div>
+
       </div>
 
       {/* bottom fade */}

@@ -23,7 +23,7 @@ export default function Skills() {
       {/* Top-left blue glow */}
       <div
         aria-hidden
-        className="animate-glow pointer-events-none absolute -left-32 -top-32 h-80 w-80 rounded-full bg-[#5483B3]/15 blur-[110px]"
+        className="animate-glow pointer-events-none absolute -left-32 -top-32 h-80 w-80 rounded-full bg-[#5483B3]/15 blur-[130px]"
       />
 
       {/* Top-right blue glow */}
@@ -35,7 +35,7 @@ export default function Skills() {
       {/* Bottom-right floating glow */}
       <div
         aria-hidden
-        className="animate-glow pointer-events-none absolute -bottom-40 -right-32 h-80 w-80 rounded-full bg-[#7DA0CA]/15 blur-[100px]"
+        className="animate-glow pointer-events-none absolute -bottom-40 -right-32 h-80 w-80 rounded-full bg-[#7DA0CA]/15 blur-[130px]"
       />
 
       {/* Floating circle */}

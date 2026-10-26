@@ -6,9 +6,9 @@ export const profile = {
   intro:
     "Hi, I'm Sadiya, a Computer Science student learning to build modern web applications. I enjoy turning ideas into real products using clean code, modern technologies, and creative problem solving.",
   // TODO: replace these placeholders with real links / email
-  email: "sadiya@example.com",
-  github: "https://github.com/sadiyatasnim",
-  linkedin: "https://linkedin.com/in/sadiyatasnim",
+  email: "sadiatasnim646@gmail.com",
+  github: "https://github.com/Sadiya646",
+  linkedin: "https://www.linkedin.com/in/sadiya-tasnim/",
 };
 
 export type WorkedWith = { icon: string; alt: string };
