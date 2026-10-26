@@ -1,4 +1,3 @@
-
 import Image from "next/image";
 import { profile } from "@/data/portfolio";
 
@@ -14,7 +13,7 @@ const socials = [
     path: "M6.94 8.5H3.27V20h3.67V8.5ZM5.1 3C3.94 3 3 3.94 3 5.1s.94 2.1 2.1 2.1 2.1-.94 2.1-2.1S6.26 3 5.1 3ZM20.73 13.42c0-3.46-1.84-5.07-4.29-5.07-1.98 0-2.87 1.09-3.37 1.86V8.5H9.4V20h3.67v-5.7c0-1.5.28-2.96 2.15-2.96 1.84 0 1.86 1.73 1.86 3.06V20h3.65v-6.58Z",
   },
   {
-    href: `mailto:${profile.email}`,
+    href: "https://mail.google.com/mail/u/0/?view=cm&fs=1&to=sadiatasnim646@gmail.com",
     label: "Email",
     path: "M3 5h18v14H3V5Zm0 0 9 7 9-7",
   },
@@ -28,16 +27,16 @@ export default function Hero() {
     >
       {/* ================= BACKGROUND ================= */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        {/* top right glow */}
+        {/* Top right glow */}
         <div className="absolute -right-32 -top-32 h-96 w-96 rounded-full bg-navy-400/20 blur-[110px]" />
 
-        {/* center glow */}
+        {/* Center glow */}
         <div className="absolute left-[35%] top-[35%] h-80 w-80 rounded-full bg-navy-800/50 blur-[120px]" />
 
-        {/* bottom left glow */}
+        {/* Bottom left glow */}
         <div className="absolute -bottom-40 -left-32 h-96 w-96 rounded-full bg-navy-400/15 blur-[120px]" />
 
-        {/* subtle grid */}
+        {/* Subtle grid */}
         <div
           className="absolute inset-0 opacity-[0.035]"
           style={{
@@ -50,9 +49,11 @@ export default function Hero() {
 
       {/* ================= CONTENT ================= */}
       <div className="relative mx-auto grid min-h-[calc(100vh-7rem)] max-w-7xl items-center gap-16 px-6 pb-20 lg:grid-cols-[1.05fr_0.95fr] lg:px-10">
+        
         {/* ================= LEFT ================= */}
         <div className="z-10 max-w-2xl animate-fade-up">
-          {/* designation */}
+          
+          {/* Designation */}
           <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-navy-400/50 bg-navy-800/50 px-4 py-2 backdrop-blur-md">
             <span className="h-2 w-2 animate-pulse rounded-full bg-navy-100 shadow-[0_0_12px_#C1E8FF]" />
 
@@ -61,7 +62,7 @@ export default function Hero() {
             </span>
           </div>
 
-          {/* heading */}
+          {/* Heading */}
           <h1 className="text-4xl font-extrabold leading-[1.08] tracking-tight text-white sm:text-3xl md:text-4xl lg:text-[3.2rem]">
             Building modern web
             <br />
@@ -77,47 +78,48 @@ export default function Hero() {
             </span>
           </h1>
 
-          {/* intro */}
+          {/* Intro */}
           <p className="mt-7 max-w-xl text-sm leading-7 text-[#7DA0CA] md:text-base">
             {profile.intro}
           </p>
 
-          {/* buttons */}
+          {/* Buttons */}
           <div className="mt-9 flex flex-wrap gap-3">
+            
+            {/* View Projects */}
             <a
               href="#projects"
               className="group inline-flex items-center gap-2 rounded-full bg-navy-100 px-6 py-3 text-sm font-semibold text-navy-950 shadow-[0_0_25px_rgba(193,232,255,0.2)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_35px_rgba(193,232,255,0.35)]"
             >
               View Projects
+
               <span className="transition-transform duration-300 group-hover:translate-x-1">
                 →
               </span>
             </a>
 
+            {/* Download Resume */}
             <a
               href="/resume.pdf"
-              download="Ruwa-Resume.pdf"
+              download="Sadiya-Resume.pdf"
               className="group inline-flex items-center gap-2 rounded-full border border-navy-400/70 bg-navy-800/30 px-6 py-3 text-sm font-medium text-navy-100 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-navy-100 hover:bg-navy-800/60"
             >
               Download Resume
+
               <span className="transition-transform duration-300 group-hover:translate-y-1">
                 ↓
               </span>
             </a>
           </div>
 
-          {/* social links */}
+          {/* ================= SOCIAL LINKS ================= */}
           <div className="mt-8 flex items-center gap-3">
             {socials.map((social) => (
               <a
                 key={social.label}
                 href={social.href}
-                target={social.label !== "Email" ? "_blank" : undefined}
-                rel={
-                  social.label !== "Email"
-                    ? "noopener noreferrer"
-                    : undefined
-                }
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label={social.label}
                 className="group flex h-11 w-11 items-center justify-center rounded-full border border-[#5483B3]/50 bg-navy-800/40 text-[#7DA0CA] backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:border-[#C1E8FF] hover:bg-[#5483B3]/30 hover:text-[#C1E8FF]"
               >
@@ -138,112 +140,102 @@ export default function Hero() {
           </div>
         </div>
 
-        
-{/* ================= RIGHT ================= */}
+        {/* ================= RIGHT ================= */}
+        <div className="relative mx-auto flex w-full max-w-[400px] items-center justify-center">
 
-<div className="relative mx-auto flex w-full max-w-[400px] items-center justify-center">
+          {/* Animated background glow */}
+          <div
+            aria-hidden
+            className="animate-glow absolute h-[300px] w-[300px] rounded-full bg-[#5483B3]/20 blur-[90px] md:h-[340px] md:w-[340px]"
+          />
 
-  {/* Animated background glow */}
-  <div
-    aria-hidden
-    className="animate-glow absolute h-[300px] w-[300px] rounded-full bg-[#5483B3]/20 blur-[90px] md:h-[340px] md:w-[340px]"
-  />
+          {/* Rotating light */}
+          <div
+            aria-hidden
+            className="absolute h-[270px] w-[270px] animate-[spin_12s_linear_infinite] rounded-full bg-[conic-gradient(from_0deg,transparent,#5483B3,transparent,#C1E8FF,transparent)] opacity-40 blur-2xl md:h-[310px] md:w-[310px]"
+          />
 
-  {/* Moving light behind image */}
-  <div
-    aria-hidden
-    className="absolute h-[270px] w-[270px] animate-[spin_12s_linear_infinite] rounded-full bg-[conic-gradient(from_0deg,transparent,#5483B3,transparent,#C1E8FF,transparent)] opacity-40 blur-2xl md:h-[310px] md:w-[310px]"
-  />
+          {/* Soft inner glow */}
+          <div
+            aria-hidden
+            className="absolute h-[230px] w-[230px] rounded-full bg-[#7DA0CA]/10 blur-3xl md:h-[270px] md:w-[270px]"
+          />
 
-  {/* Soft inner glow */}
-  <div
-    aria-hidden
-    className="absolute h-[230px] w-[230px] rounded-full bg-[#7DA0CA]/10 blur-3xl md:h-[270px] md:w-[270px]"
-  />
+          {/* Main image */}
+          <div className="relative h-[260px] w-[220px] overflow-hidden rounded-[2.5rem] border border-[#7DA0CA]/40 bg-[#052659] shadow-[0_25px_70px_rgba(2,16,36,0.8)] transition-transform duration-500 hover:-translate-y-2 md:h-[310px] md:w-[260px]">
+            
+            <Image
+              src="/images/profileimage.png"
+              alt={`Portrait of ${profile.name}`}
+              fill
+              priority
+              sizes="(min-width: 768px) 260px, 220px"
+              className="object-cover"
+            />
 
-  {/* Main image */}
-  <div className="relative h-[260px] w-[220px] overflow-hidden rounded-[2.5rem] border border-[#7DA0CA]/40 bg-[#052659] shadow-[0_25px_70px_rgba(2,16,36,0.8)] transition-transform duration-500 hover:-translate-y-2 md:h-[310px] md:w-[260px]">
+            {/* Image overlay */}
+            <div
+              aria-hidden
+              className="absolute inset-0 bg-gradient-to-t from-[#021024]/45 via-transparent to-[#5483B3]/15"
+            />
+          </div>
 
-    <Image
-      src="/images/profileimage.png"
-      alt={`Portrait of ${profile.name}`}
-      fill
-      priority
-      sizes="(min-width: 768px) 260px, 220px"
-      className="object-cover"
-    />
+          {/* Floating code chip */}
+          <div className="animate-float absolute -right-1 top-8 flex h-11 w-11 items-center justify-center rounded-xl border border-[#7DA0CA]/40 bg-[#052659]/90 font-mono text-sm text-[#C1E8FF] shadow-[0_10px_30px_rgba(2,16,36,0.6)] backdrop-blur-md md:-right-3">
+            &lt;/&gt;
+          </div>
 
-    {/* Image overlay */}
-    <div
-      aria-hidden
-      className="absolute inset-0 bg-gradient-to-t from-[#021024]/45 via-transparent to-[#5483B3]/15"
-    />
+          {/* Small floating accent */}
+          <div
+            aria-hidden
+            className="animate-float absolute -left-3 bottom-16 h-3 w-3 rounded-full bg-[#C1E8FF] shadow-[0_0_20px_#C1E8FF] md:-left-6"
+            style={{ animationDelay: "1s" }}
+          />
 
-    {/* Image shine */}
-    <div
-      aria-hidden
-      className="absolute -left-1/2 top-0 h-full w-1/3 rotate-12 bg-white/10 blur-xl transition-all duration-1000 group-hover:left-full"
-    />
-  </div>
+          {/* Decorative dots */}
+          <div className="absolute -left-4 top-16 grid grid-cols-4 gap-2 opacity-60 md:-left-8">
+            {Array.from({ length: 12 }).map((_, i) => (
+              <span
+                key={i}
+                className="animate-shimmer h-1.5 w-1.5 rounded-full bg-[#7DA0CA]"
+                style={{
+                  animationDelay: `${i * 0.2}s`,
+                }}
+              />
+            ))}
+          </div>
 
-  {/* Floating code chip */}
-  <div className="animate-float absolute -right-1 top-8 flex h-11 w-11 items-center justify-center rounded-xl border border-[#7DA0CA]/40 bg-[#052659]/90 font-mono text-sm text-[#C1E8FF] shadow-[0_10px_30px_rgba(2,16,36,0.6)] backdrop-blur-md md:-right-3">
-    &lt;/&gt;
-  </div>
+          {/* Bottom decorative dots */}
+          <div className="absolute -bottom-4 -right-2 grid grid-cols-4 gap-2 opacity-50 md:-right-7">
+            {Array.from({ length: 12 }).map((_, i) => (
+              <span
+                key={i}
+                className="animate-shimmer h-1.5 w-1.5 rounded-full bg-[#5483B3]"
+                style={{
+                  animationDelay: `${i * 0.25}s`,
+                }}
+              />
+            ))}
+          </div>
 
-  {/* Small floating accent */}
-  <div
-    aria-hidden
-    className="animate-float absolute -left-3 bottom-16 h-3 w-3 rounded-full bg-[#C1E8FF] shadow-[0_0_20px_#C1E8FF] md:-left-6"
-    style={{ animationDelay: "1s" }}
-  />
+          {/* Handwritten text */}
+          <div className="absolute -right-8 bottom-4 rotate-[-10deg] text-right text-[#7DA0CA] md:-right-16 md:bottom-6">
+            <p className="font-(family-name:--font-caveat) text-lg leading-5 md:text-xl md:leading-6">
+              Better
+              <br />
+              Code
+              <br />
+              Brighter
+              <br />
+              Future
+            </p>
 
-  {/* Decorative dots */}
-  <div className="absolute -left-4 top-16 grid grid-cols-4 gap-2 opacity-60 md:-left-8">
-    {Array.from({ length: 12 }).map((_, i) => (
-      <span
-        key={i}
-        className="animate-shimmer h-1.5 w-1.5 rounded-full bg-[#7DA0CA]"
-        style={{
-          animationDelay: `${i * 0.2}s`,
-        }}
-      />
-    ))}
-  </div>
-
-  {/* Bottom decorative dots */}
-  <div className="absolute -bottom-4 -right-2 grid grid-cols-4 gap-2 opacity-50 md:-right-7">
-    {Array.from({ length: 12 }).map((_, i) => (
-      <span
-        key={i}
-        className="animate-shimmer h-1.5 w-1.5 rounded-full bg-[#5483B3]"
-        style={{
-          animationDelay: `${i * 0.25}s`,
-        }}
-      />
-    ))}
-  </div>
-
-  {/* Handwritten text */}
-  <div className="absolute -right-8 bottom-4 rotate-[-10deg] text-right text-[#7DA0CA] md:-right-16 md:bottom-6">
-    <p className="font-(family-name:--font-caveat) text-lg leading-5 md:text-xl md:leading-6">
-      Better
-      <br />
-      Code
-      <br />
-      Brighter
-      <br />
-      Future
-    </p>
-
-    <span className="ml-4 text-xl">⌁</span>
-  </div>
-
-</div>
-
+            <span className="ml-4 text-xl">⌁</span>
+          </div>
+        </div>
       </div>
 
-      {/* bottom fade */}
+      {/* Bottom fade */}
       <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#021024] to-transparent" />
     </section>
   );
