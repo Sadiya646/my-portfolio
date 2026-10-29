@@ -1,12 +1,15 @@
+
 const navLinks = [
-  { href: "#home", label: "Home" },
-  { href: "#about", label: "About" },
-  { href: "#skills", label: "Skills" },
-  { href: "#education", label: "Education" },
-  { href: "#experience", label: "Experience" },
-  { href: "#projects", label: "Projects" },
-  { href: "#contact", label: "Contact" },
+  { href: "/#home", label: "Home" },
+  { href: "/#about", label: "About" },
+  { href: "/#skills", label: "Skills" },
+  { href: "/#education", label: "Education" },
+  { href: "/#experience", label: "Experience" },
+  { href: "/#projects", label: "Projects" },
+  { href: "/#contact", label: "Contact" },
 ];
+ 
+
 
 export default function Navbar() {
   return (
@@ -34,7 +37,7 @@ export default function Navbar() {
         </ul>
 
         <a
-          href="/resume.pdf"
+          href="/Sadiya_Tasnim_Resume_No_Photo.pdf"
           download="Sadiya-Resume.pdf"
           className="group inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-navy-800 to-navy-400 px-4 py-1.5 text-sm font-medium text-white shadow-lg shadow-navy-400/25 transition-all hover:shadow-navy-400/50 hover:brightness-110"
         >

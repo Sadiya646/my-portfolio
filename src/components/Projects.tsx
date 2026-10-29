@@ -3,6 +3,15 @@ import Image from "next/image";
 import Link from "next/link";
 import SectionHeading from "./SectionHeading";
 import { projects } from "@/data/portfolio";
+const navLinks = [
+  { href: "#home", label: "Home" },
+  { href: "#about", label: "About" },
+  { href: "#skills", label: "Skills" },
+  { href: "#education", label: "Education" },
+  { href: "#experience", label: "Experience" },
+  { href: "#projects", label: "Projects" },
+  { href: "#contact", label: "Contact" },
+];
 
 export default function Projects() {
   return (

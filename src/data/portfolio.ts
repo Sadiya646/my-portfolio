@@ -64,26 +64,7 @@ export type Project = {
 
 
 export const projects: Project[] = [
-  {
-    slug: "fitlog",
-    title: "FitLog",
-    description:
-      "A modern fitness tracking web app that helps users discover workouts, create personalized plans, save exercises, and track completed workouts.",
-    image: "/projects/fitlog.svg",
-    tech: ["Next.js", "TypeScript", "Tailwind CSS"],
-    live: "YOUR_FITLOG_LIVE_LINK",
-    github: "YOUR_FITLOG_GITHUB_LINK",
-    challenges: [
-      "Managing workout plans and completed exercises with localStorage",
-      "Creating a smooth and responsive workout browsing experience",
-      "Managing shared state between workout library and My Plan",
-    ],
-    improvements: [
-      "Add user accounts and cloud-based workout synchronization",
-      "Add progress charts and workout analytics",
-      "Add personalized workout recommendations",
-    ],
-  },
+
 
   {
     slug: "bloom-routine",
@@ -134,6 +115,27 @@ export const projects: Project[] = [
       "Add price alerts and personalized notifications",
     ],
   },
+
+  {
+  slug: "cibo-gustoso",
+  title: "Cibo Gustoso",
+  description:
+    "A modern and responsive Italian restaurant website designed to showcase the menu, team, events, and food & beverage offerings with a clean and visually appealing interface.",
+  image: "/images/Cibogustos.png",
+  tech: ["HTML", "CSS"],
+  live: "https://sadiya646.github.io/restaurant-website/",
+  github: "https://github.com/Sadiya646/restaurant-website",
+  challenges: [
+    "Creating a responsive restaurant layout using HTML and CSS",
+    "Designing attractive sections for menu, team, drinks, and events",
+    "Maintaining a consistent and visually appealing design",
+  ],
+  improvements: [
+    "Add JavaScript for interactive features",
+    "Add online table reservation functionality",
+    "Add backend support for newsletter subscriptions",
+  ],
+},
 ];
 
 

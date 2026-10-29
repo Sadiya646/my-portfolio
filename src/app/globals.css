@@ -1,3 +1,4 @@
+
 @import "tailwindcss";
 
 @theme {
@@ -24,27 +25,33 @@ body {
   color: #021024;
 }
 
+/* ================= SCROLLBAR ================= */
+
 ::-webkit-scrollbar {
   width: 8px;
 }
+
 ::-webkit-scrollbar-track {
   background: #021024;
 }
+
 ::-webkit-scrollbar-thumb {
   background: #052659;
   border-radius: 999px;
 }
+
 ::-webkit-scrollbar-thumb:hover {
   background: #5483b3;
 }
 
-/* ---------- animations ---------- */
+/* ================= BASIC ANIMATIONS ================= */
 
 @keyframes fade-up {
   from {
     opacity: 0;
     transform: translateY(24px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -56,6 +63,7 @@ body {
   100% {
     transform: translateY(0);
   }
+
   50% {
     transform: translateY(-10px);
   }
@@ -64,12 +72,11 @@ body {
 @keyframes pulse-glow {
   0%,
   100% {
-    transform: scale(1);
-    opacity: 0.5;
+    opacity: 0.35;
   }
+
   50% {
-    transform: scale(1.08);
-    opacity: 0.8;
+    opacity: 0.65;
   }
 }
 
@@ -78,95 +85,80 @@ body {
   100% {
     opacity: 1;
   }
+
   50% {
     opacity: 0.35;
-  }
-}
-
-@keyframes blob-drift {
-  0%,
-  100% {
-    transform: translate(0, 0) scale(1);
-  }
-  33% {
-    transform: translate(-18px, 14px) scale(1.08);
-  }
-  66% {
-    transform: translate(14px, -10px) scale(0.95);
-  }
-}
-
-@keyframes ring-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
   }
 }
 
 @keyframes dot-shimmer {
   0%,
   100% {
-    opacity: 0.25;
-    transform: scale(1);
+    opacity: 0.2;
+    transform: scale(0.8);
   }
+
   50% {
-    opacity: 1;
-    transform: scale(1.25);
+    opacity: 0.9;
+    transform: scale(1.15);
   }
 }
 
 .animate-fade-up {
   animation: fade-up 0.8s ease-out both;
 }
+
 .animate-float {
   animation: float-y 6s ease-in-out infinite;
 }
+
 .animate-pop {
   animation: fade-up 0.35s ease-out both;
 }
+
 .animate-glow {
   animation: pulse-glow 5s ease-in-out infinite;
 }
+
 .animate-blink {
   animation: blink-dot 2s ease-in-out infinite;
 }
-.animate-drift {
-  animation: blob-drift 9s ease-in-out infinite;
-}
-.animate-drift-slow {
-  animation: blob-drift 14s ease-in-out infinite reverse;
-}
-.animate-ring {
-  animation: ring-spin 16s linear infinite;
-}
+
 .animate-shimmer {
   animation: dot-shimmer 3s ease-in-out infinite;
 }
 
-/* staggered entrance */
+/* ================= STAGGER ================= */
+
 .stagger > * {
   animation: fade-up 0.8s ease-out both;
 }
+
 .stagger > *:nth-child(1) {
   animation-delay: 0.05s;
 }
+
 .stagger > *:nth-child(2) {
   animation-delay: 0.15s;
 }
+
 .stagger > *:nth-child(3) {
   animation-delay: 0.25s;
 }
+
 .stagger > *:nth-child(4) {
   animation-delay: 0.35s;
 }
+
 .stagger > *:nth-child(5) {
   animation-delay: 0.45s;
 }
+
 .stagger > *:nth-child(6) {
   animation-delay: 0.55s;
 }
+
+/* ================= CARDS ================= */
 
 .card-shell {
   background: linear-gradient(
@@ -174,37 +166,375 @@ body {
     rgba(84, 131, 179, 0.09),
     rgba(5, 38, 89, 0.35)
   );
+
   border: 1px solid rgba(125, 160, 202, 0.25);
+
   border-radius: 1rem;
+
   transition:
     transform 0.3s ease,
     border-color 0.3s ease,
     box-shadow 0.3s ease;
 }
+
 .card-shell:hover {
   transform: translateY(-4px);
+
   border-color: rgba(193, 232, 255, 0.55);
-  box-shadow: 0 12px 40px -12px rgba(84, 131, 179, 0.45);
+
+  box-shadow:
+    0 12px 40px -12px rgba(84, 131, 179, 0.45);
 }
 
+/* ================= SECTION ================= */
+
 .section-band {
+  position: relative;
+
   border-top: 1px solid rgba(125, 160, 202, 0.15);
+
   background:
-    radial-gradient(
-      900px circle at 85% 0%,
-      rgba(5, 38, 89, 0.55),
-      transparent 55%
-    ),
-    radial-gradient(
-      700px circle at 0% 100%,
-      rgba(5, 38, 89, 0.4),
-      transparent 50%
+    linear-gradient(
+      180deg,
+      rgba(2, 16, 36, 0.95),
+      rgba(2, 16, 36, 1)
     );
 }
 
+/* ================= TEXT ================= */
+
 .text-glow-gradient {
-  background: linear-gradient(90deg, #c1e8ff, #7da0ca);
+  background: linear-gradient(
+    90deg,
+    #c1e8ff,
+    #7da0ca
+  );
+
   -webkit-background-clip: text;
   background-clip: text;
+
   color: transparent;
+}
+
+/* ================================================= */
+/*                 BACKGROUND SYSTEM                 */
+/* ================================================= */
+
+/* ---------- Moving Grid ---------- */
+
+.bg-grid {
+  position: absolute;
+  inset: 0;
+
+  background-image:
+    linear-gradient(
+      rgba(125, 160, 202, 0.045) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(125, 160, 202, 0.045) 1px,
+      transparent 1px
+    );
+
+  background-size: 70px 70px;
+
+  mask-image: linear-gradient(
+    to bottom,
+    black 0%,
+    rgba(0, 0, 0, 0.7) 45%,
+    transparent 100%
+  );
+}
+
+/* ---------- Grid movement ---------- */
+
+@keyframes grid-move {
+  from {
+    background-position: 0 0;
+  }
+
+  to {
+    background-position: 70px 70px;
+  }
+}
+
+.animate-grid {
+  animation: grid-move 18s linear infinite;
+}
+
+/* ---------- Aurora ---------- */
+
+.bg-aurora {
+  position: absolute;
+
+  width: 75%;
+  height: 35%;
+
+  filter: blur(80px);
+
+  opacity: 0.45;
+
+  border-radius: 40%;
+
+  pointer-events: none;
+}
+
+.bg-aurora-one {
+  top: -15%;
+  left: -15%;
+
+  background: linear-gradient(
+    120deg,
+    rgba(84, 131, 179, 0.35),
+    rgba(125, 160, 202, 0.12),
+    transparent
+  );
+
+  transform: rotate(-12deg);
+
+  animation: aurora-one 18s ease-in-out infinite alternate;
+}
+
+.bg-aurora-two {
+  top: 35%;
+  right: -25%;
+
+  background: linear-gradient(
+    220deg,
+    rgba(193, 232, 255, 0.18),
+    rgba(84, 131, 179, 0.15),
+    transparent
+  );
+
+  transform: rotate(15deg);
+
+  animation: aurora-two 22s ease-in-out infinite alternate;
+}
+
+.bg-aurora-three {
+  bottom: -15%;
+  left: 20%;
+
+  background: linear-gradient(
+    90deg,
+    rgba(5, 38, 89, 0.5),
+    rgba(84, 131, 179, 0.15),
+    transparent
+  );
+
+  transform: rotate(-8deg);
+
+  animation: aurora-three 20s ease-in-out infinite alternate;
+}
+
+@keyframes aurora-one {
+  0% {
+    transform: translate3d(0, 0, 0) rotate(-12deg) scale(1);
+  }
+
+  50% {
+    transform: translate3d(15%, 12%, 0) rotate(3deg) scale(1.08);
+  }
+
+  100% {
+    transform: translate3d(30%, -5%, 0) rotate(15deg) scale(1);
+  }
+}
+
+@keyframes aurora-two {
+  0% {
+    transform: translate3d(0, 0, 0) rotate(15deg) scale(1);
+  }
+
+  50% {
+    transform: translate3d(-12%, -8%, 0) rotate(-5deg) scale(1.1);
+  }
+
+  100% {
+    transform: translate3d(-25%, 8%, 0) rotate(-18deg) scale(1);
+  }
+}
+
+@keyframes aurora-three {
+  0% {
+    transform: translate3d(0, 0, 0) rotate(-8deg);
+  }
+
+  50% {
+    transform: translate3d(10%, -10%, 0) rotate(5deg);
+  }
+
+  100% {
+    transform: translate3d(-10%, -4%, 0) rotate(-15deg);
+  }
+}
+
+/* ---------- Light beam ---------- */
+
+.bg-beam {
+  position: absolute;
+
+  width: 45%;
+  height: 1px;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(193, 232, 255, 0.35),
+    transparent
+  );
+
+  filter: blur(1px);
+
+  opacity: 0;
+}
+
+.bg-beam-one {
+  top: 28%;
+  left: -20%;
+
+  transform: rotate(24deg);
+
+  animation: beam-one 14s linear infinite;
+}
+
+.bg-beam-two {
+  top: 62%;
+  left: -25%;
+
+  transform: rotate(-18deg);
+
+  animation: beam-two 18s linear infinite;
+}
+
+@keyframes beam-one {
+  0% {
+    transform: translateX(-30%) rotate(24deg);
+    opacity: 0;
+  }
+
+  20% {
+    opacity: 0.5;
+  }
+
+  50% {
+    opacity: 0.15;
+  }
+
+  80% {
+    opacity: 0.4;
+  }
+
+  100% {
+    transform: translateX(280%) rotate(24deg);
+    opacity: 0;
+  }
+}
+
+@keyframes beam-two {
+  0% {
+    transform: translateX(-40%) rotate(-18deg);
+    opacity: 0;
+  }
+
+  25% {
+    opacity: 0.35;
+  }
+
+  60% {
+    opacity: 0.1;
+  }
+
+  100% {
+    transform: translateX(300%) rotate(-18deg);
+    opacity: 0;
+  }
+}
+
+/* ---------- Tiny stars ---------- */
+
+.bg-stars {
+  position: absolute;
+  inset: 0;
+
+  background-image:
+    radial-gradient(
+      circle at 20% 20%,
+      rgba(193, 232, 255, 0.35) 1px,
+      transparent 1.5px
+    ),
+    radial-gradient(
+      circle at 75% 30%,
+      rgba(125, 160, 202, 0.3) 1px,
+      transparent 1.5px
+    ),
+    radial-gradient(
+      circle at 40% 70%,
+      rgba(193, 232, 255, 0.25) 1px,
+      transparent 1.5px
+    ),
+    radial-gradient(
+      circle at 85% 80%,
+      rgba(84, 131, 179, 0.3) 1px,
+      transparent 1.5px
+    );
+
+  background-size:
+    180px 180px,
+    240px 240px,
+    210px 210px,
+    260px 260px;
+
+  opacity: 0.35;
+
+  animation: stars-drift 25s linear infinite;
+}
+
+@keyframes stars-drift {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    transform: translate3d(-40px, 30px, 0);
+  }
+}
+
+/* ---------- Vignette ---------- */
+
+.bg-vignette {
+  position: absolute;
+  inset: 0;
+
+  background:
+    radial-gradient(
+      ellipse at center,
+      transparent 35%,
+      rgba(2, 16, 36, 0.35) 75%,
+      rgba(2, 16, 36, 0.75) 100%
+    );
+}
+
+/* ---------- Performance ---------- */
+
+.bg-aurora,
+.bg-beam,
+.bg-grid,
+.bg-stars {
+  will-change: transform;
+}
+
+/* ---------- Reduced motion ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-grid,
+  .bg-aurora-one,
+  .bg-aurora-two,
+  .bg-aurora-three,
+  .bg-beam-one,
+  .bg-beam-two,
+  .bg-stars {
+    animation: none;
+  }
 }

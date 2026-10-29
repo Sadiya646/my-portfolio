@@ -25,4 +25,14 @@ export const projects = [
     image: "/images/health-reminder.png",
     tech: ["Flutter", "Dart", "SQLite"],
   },
+  {
+  slug: "cibo-gustoso",
+  title: "Cibo Gustoso",
+  description:
+    "A modern and responsive Italian restaurant website designed to showcase the restaurant's menu, team, events, and food and beverage offerings with a clean and visually appealing interface.",
+  image: "/images/Cibogustos.png",
+  tech: ["HTML", "CSS"],
+  live: "https://sadiya646.github.io/restaurant-website/",
+  github: "https://github.com/Sadiya646/restaurant-website",
+  }
 ];
