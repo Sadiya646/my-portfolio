@@ -46,8 +46,16 @@ export const skills: Skill[] = [
   { name: "Java", category: "languages", mark: "Jv", markColor: "bg-orange-400/15 text-orange-300" },
   { name: "C", category: "languages", mark: "C", markColor: "bg-blue-400/15 text-blue-300" },
   { name: "Dart", category: "languages", mark: "D", markColor: "bg-sky-400/15 text-sky-300" },
+    // Tools
+  { name: "VS Code", category: "tools", mark: "VS", markColor: "bg-blue-500/15 text-blue-400" },
   { name: "Git", category: "tools", mark: "Git", markColor: "bg-red-500/15 text-red-400" },
   { name: "GitHub", category: "tools", mark: "Gb", markColor: "bg-navy-100/10 text-navy-100" },
+  { name: "Figma", category: "tools", mark: "Fi", markColor: "bg-purple-500/15 text-purple-400" },
+  { name: "Penpot", category: "tools", mark: "P", markColor: "bg-pink-500/15 text-pink-400" },
+  { name: "Postman", category: "tools", mark: "Pm", markColor: "bg-orange-500/15 text-orange-400" },
+  { name: "Vercel", category: "tools", mark: "V", markColor: "bg-gray-500/15 text-gray-300" },
+  { name: "npm", category: "tools", mark: "npm", markColor: "bg-red-500/15 text-red-400" },
+  { name: "Netlify", category: "tools", mark: "N", markColor: "bg-teal-500/15 text-teal-400" },
 ];
 
 export type Project = {

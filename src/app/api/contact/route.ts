@@ -3,8 +3,6 @@ import { Resend } from "resend";
 
 export const runtime = "nodejs";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 export async function POST(request: Request) {
   try {
     const { name, email, message } = await request.json();
@@ -50,15 +48,18 @@ export async function POST(request: Request) {
       );
     }
 
-    const { CONTACT_TO } = process.env;
+    const { RESEND_API_KEY, CONTACT_TO } = process.env;
 
-    if (!process.env.RESEND_API_KEY || !CONTACT_TO) {
+    if (!RESEND_API_KEY || !CONTACT_TO) {
       console.error("Resend API key or CONTACT_TO is missing.");
       return NextResponse.json(
         { success: false, message: "Email service is not configured." },
         { status: 500 }
       );
     }
+
+    // এটি POST ফাংশনের ভেতরে রাখা হয়েছে যাতে বিল্ডের সময় এরর না দেয়
+    const resend = new Resend(RESEND_API_KEY);
 
     const { error } = await resend.emails.send({
       from: "Portfolio Contact <onboarding@resend.dev>",

@@ -37,8 +37,8 @@ export default function Navbar() {
         </ul>
 
         <a
-          href="/Sadiya_Tasnim_Resume_No_Photo.pdf"
-          download="Sadiya-Resume.pdf"
+          href="/Resume.png"
+          download="Sadiya-Resume.png"
           className="group inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-navy-800 to-navy-400 px-4 py-1.5 text-sm font-medium text-white shadow-lg shadow-navy-400/25 transition-all hover:shadow-navy-400/50 hover:brightness-110"
         >
           Resume

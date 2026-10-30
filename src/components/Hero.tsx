@@ -100,8 +100,8 @@ export default function Hero() {
 
             {/* Download Resume */}
             <a
-              href="/resume.pdf"
-              download="Sadiya-Resume.pdf"
+              href="/Resume.png"
+              download="Sadiya-Resume.png"
               className="group inline-flex items-center gap-2 rounded-full border border-navy-400/70 bg-navy-800/30 px-6 py-3 text-sm font-medium text-navy-100 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-navy-100 hover:bg-navy-800/60"
             >
               Download Resume
